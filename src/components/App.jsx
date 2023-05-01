@@ -1,9 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { fetchContacts } from 'redux/contacts/operations';
-import { selectError, selectIsLoading } from "redux/contacts/contact-selector";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { RestrictedRoute } from "./RestrictedRoute";
 import { PrivateRoute } from "./PrivateRoute";
 import { Layout } from "./Layout";
@@ -11,19 +10,22 @@ import Home from "page/Home";
 import Registr from "page/Register";
 import Login from "page/Login";
 import Contacts from "page/Contacts";
+import { useAuth } from "hooks";
 
 
 
 export const App = () => {
   const dispatch = useDispatch();
-  const IsLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+  const {isRefreshing} = useAuth();
+  
 
   useEffect(()=>{
     dispatch(fetchContacts());
   }, [dispatch])
 
-  return (
+  return isRefreshing ? (
+    <p>Refreshing user</p>
+  ):(
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home/>}/>
