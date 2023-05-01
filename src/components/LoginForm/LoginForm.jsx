@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { logIn } from "redux/auth/auth-operations";
+import { TextInput, Button, Group, Box } from '@mantine/core';
 
 export const LoginForm = () => {
     const dispatch = useDispatch();
@@ -19,7 +20,21 @@ export const LoginForm = () => {
   };
 
     return(
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <Box maw={320} mx="auto">
+            <form autoComplete="off" onSubmit={handleSubmit}>
+                <TextInput label="email" placeholder="email" type="email" name="email"/>
+                <TextInput mt="md" label="password" placeholder="password" type="password" name="password"/>
+                <Group position="center" mt="xl">
+                    <Button variant="outline" type="submit">
+                        Log In
+                    </Button>
+                </Group>
+            </form>
+        </Box>
+    )
+}
+
+{/* <form autoComplete="off" onSubmit={handleSubmit}>
             <label>
                 Email
                 <input type="email" name="email" />
@@ -29,6 +44,4 @@ export const LoginForm = () => {
                 <input type="password" name="password" />
             </label>
             <button type="submit">Log In</button>
-        </form>
-    )
-}
+        </form> */}

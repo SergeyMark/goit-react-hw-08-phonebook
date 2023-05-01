@@ -3,6 +3,9 @@ import { nanoid } from "nanoid";
 import { useSelector, useDispatch } from "react-redux";
 import { addContact } from '../../redux/contacts/operations';
 import { selectContacts } from "../../redux/contacts/contact-selector";
+import { Button } from '@mantine/core';
+
+
 
 export const ContactForm = () => {
     const contacts = useSelector(selectContacts);
@@ -77,9 +80,9 @@ export const ContactForm = () => {
               value={number}
             />
           </label>
-          <button type="submit">
-            Add contact
-          </button>
+          {/* <button type="submit"> */}
+            <Button type="submit">Add contact</Button>
+          {/* </button> */}
         </form>
 )
 }

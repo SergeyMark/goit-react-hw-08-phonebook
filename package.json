@@ -4,6 +4,10 @@
   "private": true,
   "homepage": "https://SergeyMark.github.io/goit-react-hw-08-phonebook/",
   "dependencies": {
+    "@emotion/react": "^11.10.8",
+    "@mantine/core": "^6.0.9",
+    "@mantine/form": "^6.0.9",
+    "@mantine/hooks": "^6.0.9",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
