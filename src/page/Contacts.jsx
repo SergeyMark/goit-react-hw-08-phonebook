@@ -6,7 +6,7 @@ import { fetchContacts } from "redux/contacts/operations";
 import { selectError, selectIsLoading } from "redux/contacts/contact-selector";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import { Loader, Group } from '@mantine/core';
 
 
 export default function Contacts() {
@@ -19,15 +19,14 @@ export default function Contacts() {
     },[dispatch])
 
     return(
-        <div>
-            <h1>Phonebook</h1>
+        <div style={{marginTop: '150px'}}>
+            <h1 style={{textAlign: 'center', textTransform: 'uppercase'}}>Phonebook</h1>
             <ContactForm/>
             <ContactFilter/>
             {(isLoading && !error && (
-                <>
-                    <br/>
-                    <p>in progress... Wait</p>
-                </>
+                <Group position="center" mt='15px' mb='15px'>
+                    <Loader/>
+                </Group>
             )) || <ContactList/>}
         </div>
     )
