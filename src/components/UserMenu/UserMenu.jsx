@@ -19,7 +19,7 @@ export const UserMenu = () => {
                 <Indicator inline size={10} offset={4} position="bottom-end" color="green" withBorder>
                     <Avatar variant="filled" radius="xl" color="red" src="https://www.gamespot.com/a/uploads/scale_medium/1573/15735876/3201896-starwars-main2.jpg"/> 
                 </Indicator>
-                <Text tt='uppercase' c='blue'>{user.name}</Text>
+                <Text tt='uppercase' c='blue'>{user.email}</Text>
             </div>
             <Button variant="outline" size="xs" uppercase onClick={handleLogOut} type="button">
                 Logout
