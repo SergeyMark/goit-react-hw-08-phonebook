@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { logOut } from "redux/auth/auth-operations";
-import { useAuth } from "hooks";
+import { useAuth } from "../../hooks/useAuth";
 import { Avatar, Button, Text, Indicator } from "@mantine/core";
 
 

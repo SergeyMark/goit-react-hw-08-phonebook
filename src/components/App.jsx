@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { fetchContacts } from 'redux/contacts/operations';
+// import { fetchContacts } from 'redux/contacts/operations';
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { RestrictedRoute } from "./RestrictedRoute";
@@ -10,7 +10,8 @@ import Home from "page/Home";
 import Registr from "page/Register";
 import Login from "page/Login";
 import Contacts from "page/Contacts";
-import { useAuth } from "hooks";
+import { useAuth } from "../hooks/useAuth";
+import { refreshUser } from "redux/auth/auth-operations";
 
 
 
@@ -19,13 +20,18 @@ export const App = () => {
   const {isRefreshing} = useAuth();
   
 
+  // useEffect(()=>{
+  //   dispatch(fetchContacts());
+  // }, [dispatch])
+
   useEffect(()=>{
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch])
 
   return isRefreshing ? (
     <p>Refreshing user</p>
   ):(
+    <>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home/>}/>
@@ -41,5 +47,6 @@ export const App = () => {
         <Route path="*" navigateTo="/" element={<Home/>} />
       </Route>
     </Routes>
+    </>
   );
 };
