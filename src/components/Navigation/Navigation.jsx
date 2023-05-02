@@ -6,7 +6,7 @@ export const Navigation = () => {
 
     return(
         <nav>
-            <NavLink to='/'>
+            <NavLink to='/' style={{marginRight: '10px'}}>
                 Home
             </NavLink>
             {isLoggedIn && (

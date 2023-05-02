@@ -22,8 +22,8 @@ export const LoginForm = () => {
     return(
         <Box maw={320} mx="auto">
             <form autoComplete="off" onSubmit={handleSubmit}>
-                <TextInput label="email" placeholder="email" type="email" name="email"/>
-                <TextInput mt="md" label="password" placeholder="password" type="password" name="password"/>
+                <TextInput label="Email" placeholder="email" type="email" name="email"/>
+                <TextInput mt="15px" label="Password" placeholder="password" type="password" name="password"/>
                 <Group position="center" mt="xl">
                     <Button variant="outline" type="submit">
                         Log In

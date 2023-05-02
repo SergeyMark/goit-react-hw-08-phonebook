@@ -6,8 +6,11 @@ import { useAuth } from "hooks";
 const style = {
     header: {
         borderBottom: '2px solid black',
-        paddingTop: '10px',
-        paddingBottom: '10px'
+        paddingTop: '20px',
+        paddingBottom: '20px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     }
 }
 
