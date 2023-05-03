@@ -19,11 +19,6 @@ export const App = () => {
   const dispatch = useDispatch();
   const {isRefreshing} = useAuth();
   
-
-  // useEffect(()=>{
-  //   dispatch(fetchContacts());
-  // }, [dispatch])
-
   useEffect(()=>{
     dispatch(refreshUser());
   }, [dispatch])
