@@ -11,7 +11,7 @@ import Login from "page/Login";
 import Contacts from "page/Contacts";
 import { useAuth } from "../hooks/useAuth";
 import { refreshUser } from "redux/auth/auth-operations";
-
+import { Loader, Group } from '@mantine/core';
 
 
 export const App = () => {
@@ -23,7 +23,9 @@ export const App = () => {
   }, [dispatch])
 
   return isRefreshing ? (
-    <p>Refreshing user</p>
+    <Group position="center" mt='400px' mb='15px'>
+        <Loader size="xl" color="dark" variant="dots"/>
+    </Group>
   ):(
     <>
     <Routes>
