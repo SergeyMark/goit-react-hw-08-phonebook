@@ -1,9 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch} from "react-redux";
 import { logIn } from "redux/auth/auth-operations";
 import { TextInput, Button, Group, Box } from '@mantine/core';
 
+
 export const LoginForm = () => {
     const dispatch = useDispatch();
+    
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -30,7 +32,8 @@ export const LoginForm = () => {
                     </Button>
                 </Group>
             </form>
-        </Box>
+        </Box> 
     )
 }
+
 
